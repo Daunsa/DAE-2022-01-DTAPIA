@@ -19,7 +19,7 @@ from django.urls import path
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Hola amiguitos");
+    return HttpResponse("Daniel Edward Tapia Saenz");
 
 urlpatterns = [
     path('', home),
