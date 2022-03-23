@@ -1,0 +1,11 @@
+<h2>CÁLCULO DEL VOLUMEN DEL CILINDRO</h2>
+<form action="{% url 'encuesta:cilindro_respuesta' %}" method="post">
+    {% csrf_token %}
+    Altura:
+    <input type="text" name="num_1" maxlength="50">
+    <br>
+    Diametro:
+    <input type="text" name="num_2" maxlength="50">
+    <br> 
+    <input type="submit" name="submit" value="Calcular">
+</form>
