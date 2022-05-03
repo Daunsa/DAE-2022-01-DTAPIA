@@ -24,5 +24,5 @@ class Serie(models.Model):
     rating = models.IntegerField(default=0)
     category = models.CharField(max_length=10, choices=CATEGORIES_CHOICES)
 
-    def __str_(self):
+    def __str__(self) -> str:
         return self.name
