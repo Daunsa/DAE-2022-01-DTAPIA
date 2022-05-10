@@ -11,6 +11,9 @@
 # production
 /build
 
+#venv
+myvenv/
+
 # misc
 .DS_Store
 .env.local
