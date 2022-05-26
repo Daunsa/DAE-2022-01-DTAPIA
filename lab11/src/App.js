@@ -55,7 +55,7 @@ class App extends Component {
     })
   }
   mostrar(cod, index) {
-    axios.get('http://localhost:8000/series/' + cod)
+    axios.get('http://localhost:8000/serie/' + cod)
     .then(res => {
       this.setState({
         pos: index,
@@ -78,7 +78,7 @@ class App extends Component {
       category: this.state.categoria
     }
     if (cod > 0) {
-      axios.put('http://localhost:8000/series/' + cod, datos)
+      axios.put('http://localhost:8000/serie/' + cod, datos)
       .then(res => {
         let indx = this.state.pos;
         this.state.series[indx] = res.data;
@@ -97,7 +97,7 @@ class App extends Component {
         console.log(err.toString());
       });
     } else {
-      axios.post('http://localhost:8000/series/', datos)
+      axios.post('http://localhost:8000/series', datos)
         .then(res => {
           this.state.series.push(res.data);
           var temp = this.state.series;
@@ -117,7 +117,7 @@ class App extends Component {
   eliminar(cod) {
     let rpta = window.confirm("Desea eliminar?");
     if (rpta) {
-      axios.delete('http://localhost:8000/series/' + cod)
+      axios.delete('http://localhost:8000/serie/' + cod)
         .then(res => {
           var temp = this.state.series.filter((serie) => serie.id !== cod);
           this.setState({
